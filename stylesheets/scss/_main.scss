@@ -1,0 +1,15 @@
+/*
+*   Hér koma importin frá hinum scss file-onum.
+*   þessi skrá tengist scss skránum sem tengist 
+*   síðan styles.css
+*/
+
+@import '_config';
+@import '_header';
+@import '_almennt';
+@import '_recipes';
+@import '_fonts';
+@import '_booksection';
+@import '_footer';
+@import '_hero';
+@import '_recipehtml';

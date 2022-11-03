@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+/*
+* Sér css skrá fyrir recipe.html
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+:root {
+  --spacing: 1rem;
+  --max-width: 1600px;
+  --grid-width: calc(100% - (2 * var(--offset)));
+  --columns: 12;
+  --gutter: 30px;
+  --offset: 20px;
+}
+
+/* Header */
+.header-content-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  width: var(--grid-width);
+}
+.header-content-3 ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+/* Footer */
+.footer-content-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  width: var(--grid-width);
+}
+.newsletter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #000000;
+  height: 10rem;
+}
+.newsletter p {
+  color: #E3CDB1;
+}
+.newsletter button {
+  background-color: #000000;
+  color: #E3CDB1;
+  border-color: #E3CDB1;
+  border-style: solid;
+  border-width: 1px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.newsletter label, .newsletter input {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #FFFFFF;
+}
+.newsletter input {
+  background-color: #000000;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #E3CDB1;
+  padding-bottom: 0.25rem;
+}
+.newsletter h2 {
+  color: #FFFFFF;
+}
+.vertical-flex-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+main {
+  margin: 0 auto;
+  max-width: var(--max-width);
+  width: var(--grid-width);
+}
+
+/* Latest recipes */
+.recipe-cards-3 {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), calc((100% - 11 * var(--gutter)) / var(--columns)));
+  grid-auto-rows: auto auto;
+  grid-auto-flow: dense;
+  gap: var(--gutter);
+}
+.recipe-cards-3 .card {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 4;
+}
+.recipe-cards-3 img {
+  width: 100%;
+}
+
+

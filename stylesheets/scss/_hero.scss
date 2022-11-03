@@ -1,0 +1,33 @@
+/*
+* Hero svæði
+*/
+.banner {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    box-shadow: 20px 10px 20px black;
+    max-width: var(--max-width);
+}
+.left-column, .right-column {
+    flex-basis: 50%;
+}
+.banner .content {
+    display: flex;
+    flex-direction: column;
+    padding: 15%;
+}
+.banner .right-column img {
+    width: 100%;
+}
+.banner .left-column {
+    flex-direction: column;
+}
+.button-padding {
+    padding-top: 45px;
+}
+@media all and (min-width:600px) and (max-width:768px) {
+   
+}
+@media all and (max-width:600px) {
+    
+}

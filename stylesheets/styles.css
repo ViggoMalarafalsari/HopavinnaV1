@@ -1,0 +1,1137 @@
+@charset "UTF-8";
+/*
+*   Hér koma importin frá hinum scss file-onum.
+*   þessi skrá tengist scss skránum sem tengist 
+*   síðan styles.css
+*/
+/*
+* Hér komur allt sem tengist settings
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+:root {
+  --spacing: 1rem;
+  --vertical-space: calc(var(--gutter));
+  --max-width: 1600px;
+  --grid-width: calc(100% -(2 * var(--offset)));
+  --color-primary: #FFFFFF;
+  --color-header: #fff;
+  --color-text: #000;
+  --color-border: #ccc;
+  --color-header-nav: #9B9B9B;
+  --color-lightbrown: #E3CDB1;
+  --color-grey: #5E5B69;
+  --color-book-section: #F7F1EB;
+  --font-base-body-px: 16px;
+  --font-base-size: 1rem;
+  --font-base-size-600: 1.1rem;
+  --font-h1-size: 60px;
+  --font-family-playfair: "Playfair Display", serif;
+  --font-family-poppins: "poppins", sans-serif;
+  --columns: 12;
+  --gutter: 30px;
+  --offset: 20px;
+}
+
+/*
+* Hér komur allt sem tengist header
+*/
+header {
+  background-color: #FAFAFA;
+  box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.08);
+  z-index: 999;
+}
+
+.header-container {
+  max-width: var(--max-width);
+  height: 8vh;
+  margin: 0 auto;
+  display: flex;
+}
+
+nav {
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--gutter);
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+header nav li {
+  color: var(--color-header-nav);
+  font-family: var(--font-family-poppins);
+}
+
+.navigaton {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--max-width);
+  height: 100vh;
+  background: white;
+}
+
+@media all and (max-width: 1024px) {
+  .header-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .logo {
+    grid-column: 2/span 5;
+  }
+  .navigation {
+    grid-column: 11/span 6;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 768px) {
+  .header-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .logo {
+    grid-column: 2/span 5;
+  }
+  .navigation {
+    grid-column: 10/span 6;
+  }
+}
+@media all and (max-width: 600px) {
+  .header-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .logo {
+    grid-column: 2/span 5;
+  }
+  .navigation {
+    grid-column: 10/span 6;
+  }
+}
+/*
+* Hér komur allt almennt
+*/
+body {
+  color: var(--color-text);
+  font-size: var(--font-base-body-px);
+  line-height: 1.5;
+  font-family: var(--font-family-base);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto;
+  gap: var(--gutter);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 4);
+  margin: 0 auto;
+  padding-left: calc(var(--spacing) * 2);
+  padding-right: calc(var(--spacing) * 2);
+}
+
+.protection {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100000;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.lightbrown {
+  color: var(--color-lightbrown);
+}
+
+.grey {
+  color: var(--color-grey);
+}
+
+/*
+* Hér er allt sem tengist recipes
+*/
+.recipes {
+  z-index: 9999999;
+  gap: var(--spacing);
+  max-width: var(--max-width);
+}
+
+.recipes .cards-1 {
+  display: flex;
+  gap: calc(var(--spacing) * 3);
+}
+
+.recipes .cards-2 {
+  display: flex;
+  gap: calc(var(--spacing) * 3);
+}
+
+.recipes h2 {
+  margin-bottom: var(--spacing);
+}
+
+.card-efri {
+  display: flex;
+  flex-direction: column;
+  width: 683px;
+}
+
+.card-efri > .image {
+  order: -1;
+  height: 200px;
+}
+
+.card-efri > .image img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 200px;
+}
+
+.card-efri > .recipe-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing);
+}
+
+.card-efri > .recipe-content > p {
+  flex: 1;
+}
+
+.card-nedri {
+  display: flex;
+  flex-direction: column;
+  width: 683px;
+}
+
+.recipe-content > .image {
+  order: -1;
+  height: 200px;
+}
+
+.recipe-content > .image img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 200px;
+}
+
+.card-nedri > .recipe-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing);
+}
+
+.card-nedri > .recipe-content > p {
+  flex: 1;
+}
+
+.cards-1 a {
+  color: var(--color-lightbrown);
+  justify-content: flex-end;
+}
+
+.cards-2 a {
+  color: var(--color-lightbrown);
+  justify-content: flex-end;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.content-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.seemore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.seemore button {
+  background-color: transparent;
+  color: var(--color-lightbrown);
+  border-color: var(--color-lightbrown);
+  border-style: solid;
+  border-width: 1px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.seemore hr {
+  flex: 1;
+  height: 1px;
+  color: var(--color-lightbrown);
+  border-style: solid;
+}
+
+@media all and (min-width: 600px) and (max-width: 768px) {
+  .recipes .cards-1 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .card-efri {
+    grid-column: 4/span 5;
+    height: 400px;
+  }
+  .card-efri > .recipe-content {
+    height: 600px;
+  }
+  .recipe-content > .image img {
+    height: 300px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .recipes .cards-2 {
+    display: none;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .grid > p {
+    grid-column: 3/span 5;
+    font-size: 1.2rem;
+  }
+  .grid > h2 {
+    grid-column: 3/span 7;
+    font-size: 2.2rem;
+  }
+  .recipe-content p {
+    font-size: 1.2rem;
+  }
+  .recipe-content h3 {
+    font-size: 1.5rem;
+  }
+  .recipe-content a {
+    font-size: 1.2rem;
+  }
+}
+@media all and (max-width: 600px) {
+  .recipes .cards-1 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .card-efri {
+    grid-column: 4/span 5;
+    height: 400px;
+  }
+  .card-efri > .recipe-content {
+    height: 600px;
+  }
+  .recipe-content > .image img {
+    height: 300px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .recipes .cards-2 {
+    display: none;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .grid > p {
+    grid-column: 3/span 5;
+    font-size: 1.8rem;
+  }
+  .grid > h2 {
+    grid-column: 3/span 7;
+    font-size: 2.5rem;
+  }
+  .recipe-content p {
+    font-size: 1.5rem;
+  }
+  .recipe-content h3 {
+    font-size: 2rem;
+  }
+  .recipe-content a {
+    font-size: 1.5rem;
+  }
+}
+/*
+****Fonts****
+*/
+@font-face {
+  font-display: swap;
+  font-family: "poppins";
+  font-style: normal;
+  src: url("/fonts/Poppins/Poppins-Regular.ttf") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "PlayfairDisplay";
+  font-style: normal;
+  src: url("/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf") format("woff");
+}
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format("woff2");
+}
+h1 > h2 > h3 {
+  font-family: var(--font-family-playfair);
+}
+
+h1 {
+  font-size: var(--font-h1-size);
+}
+
+p {
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-base-body-px);
+}
+
+a {
+  font-family: var(--font-family-poppins);
+}
+
+/*
+* Hér er allt sem tengist Book section svæðinu
+*/
+.container {
+  background-color: var(--color-book-section);
+  height: 75vh;
+  display: flex;
+  max-width: 100%;
+}
+
+.container .left-column {
+  display: flex;
+  align-items: center;
+}
+
+.book-content {
+  padding: 20%;
+}
+
+.container .right-column img {
+  position: absolute;
+  margin-top: 150px;
+  box-shadow: -5px -5px 10px gray;
+}
+
+.button {
+  background-color: transparent;
+  color: var(--color-lightbrown);
+  border-color: var(--color-lightbrown);
+  border-style: solid;
+  border-width: 1px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+@media all and (min-width: 600px) and (max-width: 768px) {
+  .container {
+    height: 95vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 50vh);
+  }
+  .container .left-column {
+    grid-column: 2/span 10;
+    grid-row: 1;
+  }
+  .book-content {
+    text-align: center;
+    padding: 15%;
+  }
+  .book-content p {
+    font-size: 1.2em;
+  }
+  .container .right-column {
+    grid-column: 5/span 8;
+    grid-row: 2;
+    margin-bottom: 100px;
+  }
+  .container .right-column img {
+    margin-top: 0;
+    height: 60%;
+  }
+}
+@media all and (max-width: 600px) {
+  .container {
+    height: 95vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 50vh);
+  }
+  .container .left-column {
+    grid-column: 2/span 10;
+    grid-row: 1;
+  }
+  .book-content {
+    text-align: center;
+    padding: 15%;
+  }
+  .book-content p {
+    font-size: 1.5em;
+  }
+  .container .right-column {
+    grid-column: 5/span 8;
+    grid-row: 2;
+    margin-bottom: 100px;
+  }
+  .container .right-column img {
+    margin-top: 20px;
+    height: 60%;
+  }
+}
+/*
+* Hér er allt sem tengist footer
+*/
+.footer-content-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.newsletter-container-1 {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-text);
+  min-height: 10rem;
+}
+
+.newsletter-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 0 auto;
+}
+.newsletter-1 p {
+  color: var(--color-lightbrown);
+}
+.newsletter-1 button {
+  background-color: transparent;
+  color: var(--color-lightbrown);
+  border-color: var(--color-lightbrown);
+  border-style: solid;
+  border-width: 1px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.newsletter-1 label, .newsletter-1 input {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--color-primary);
+}
+.newsletter-1 input {
+  background-color: var(--color-text);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: var(--color-lightbrown);
+  padding-bottom: 0.25rem;
+}
+.newsletter-1 h2 {
+  color: var(--color-primary);
+}
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+@media all and (min-width: 600px) and (max-width: 768px) {
+  .newsletter-1 {
+    flex-direction: column;
+    gap: var(--gutter);
+    align-items: center;
+    margin-top: 10px;
+  }
+  .newsletter-1 p {
+    text-align: center;
+    font-size: 1.2em;
+  }
+  button {
+    margin-bottom: 10px;
+  }
+  .email-field label {
+    font-size: 1.3em;
+  }
+  .email-field input {
+    font-size: 1.2em;
+  }
+  .newsletter-1 h2 {
+    font-size: 2em;
+  }
+}
+@media all and (max-width: 600px) {
+  .newsletter-1 {
+    flex-direction: column;
+    gap: var(--gutter);
+    align-items: center;
+    margin: 0;
+  }
+  .newsletter-1 p {
+    text-align: center;
+    font-size: 1.2em;
+  }
+  .newsletter-1 h2 {
+    font-size: 2em;
+  }
+  button {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }
+  .email-field label {
+    font-size: 1.5em;
+  }
+  .email-field input {
+    font-size: 1.2em;
+  }
+}
+/*
+* Hero svæði
+*/
+.banner {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  box-shadow: 20px 10px 20px black;
+  max-width: var(--max-width);
+}
+
+.left-column, .right-column {
+  flex-basis: 50%;
+}
+
+.banner .content {
+  display: flex;
+  flex-direction: column;
+  padding: 15%;
+}
+
+.banner .right-column img {
+  width: 100%;
+}
+
+.banner .left-column {
+  flex-direction: column;
+}
+
+.button-padding {
+  padding-top: 45px;
+}
+
+/*
+*   scss fyrir recipe.html
+*/
+/* Setjum inn „reset“ sem fjarlægir margin og padding af öllu */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Reiknum stærð á öllum boxum sem border-box */
+html {
+  box-sizing: border-box;
+  /* Lætur skroll innan síðu taka tíma */
+  scroll-behavior: smooth;
+}
+
+/* og látum erfast á allt */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Breytur sem skal nota */
+:root {
+  /* Grunn bilið okkar er 1rem == 16px */
+  --spacing: 1rem;
+  /* Hámarksbreidd á efni */
+  --max-width: 1600px;
+  --grid-width: calc(100% - (2 * var(--offset)));
+  --columns: 12;
+  --gutter: 30px;
+  --offset: 20px;
+}
+
+/* Body og main */
+body {
+  background-color: #FAFAFA;
+}
+
+main {
+  /* Lætur allt skalast samhliða grid eins og það gerði í verkefni 5 */
+  margin: 0 auto;
+  max-width: var(--max-width);
+  width: var(--grid-width);
+  margin-bottom: 4rem;
+}
+
+/* Header */
+header {
+  margin-bottom: "";
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 3vh;
+  max-width: var(--max-width);
+  width: var(--grid-width);
+}
+
+.header-content ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.recipe-header-content h1 {
+  font-size: 40px;
+}
+
+/* Footer */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-container {
+  display: flex;
+  justify-content: center;
+  background-color: #000000;
+  min-height: 10rem;
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  /* Lætur allt skalast samhliða grid eins og það gerði í verkefni 5 */
+  margin: 0 auto;
+  max-width: var(--max-width);
+  width: var(--grid-width);
+}
+
+.newsletter p {
+  color: #E3CDB1;
+}
+
+.newsletter button {
+  background-color: transparent;
+  color: #E3CDB1;
+  border-color: #E3CDB1;
+  border-style: solid;
+  border-width: 1px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.newsletter label, .newsletter input {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #FFFFFF;
+}
+
+.newsletter input {
+  background-color: #000000;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #E3CDB1;
+  padding-bottom: 0.25rem;
+}
+
+.newsletter h2 {
+  color: #FFFFFF;
+}
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Latest recipes */
+.recipe-cards {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), calc((100% - 11 * var(--gutter)) / var(--columns)));
+  grid-auto-rows: auto auto;
+  grid-auto-flow: dense;
+  gap: var(--gutter);
+  margin-bottom: 4rem;
+}
+
+.recipe-cards .card {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 4;
+  background-color: #FFFFFF;
+}
+
+.recipe-cards .card img {
+  width: 100%;
+}
+
+.card-text {
+  margin: 1rem;
+}
+
+.readmore {
+  display: flex;
+  justify-content: space-between;
+}
+
+.readmore p {
+  color: #E3CDB1;
+}
+
+.seemore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.seemore button {
+  background-color: transparent;
+  color: var(--color-lightbrown);
+  border-color: var(--color-lightbrown);
+  border-style: solid;
+  border-width: 1px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.seemore hr {
+  flex: 1;
+  height: 1px;
+  color: var(--color-lightbrown);
+  border-style: solid;
+}
+
+/* Recipe */
+.recipe-header {
+  background-image: url("../../myndir/Background-Header-Image-1.png");
+  background-size: contain;
+  position: relative;
+  min-height: 90vh;
+}
+
+.recipe-header-content {
+  display: grid;
+  grid-template-columns: auto;
+  grid-column: span 3;
+  margin-top: 269px;
+  line-height: 1.5;
+  width: 30%;
+}
+
+.recipe-header-content h1 {
+  font-size: 60px;
+}
+
+.recipe-instructions {
+  display: flex;
+  flex-direction: row;
+  grid-column: 1/span 3;
+  gap: 1rem;
+}
+
+.ingredients-and-methods h1 {
+  font-size: 3rem;
+  color: #D0D0D0;
+}
+
+.ingredients li {
+  display: flex;
+  justify-content: center;
+}
+
+/*setur h1 í sömu línu og ingredientið*/
+.ingredients li h2 {
+  display: inline;
+  color: #E3CDB1;
+  margin-right: 1rem;
+}
+
+/*bætir við bili á milli for the dough/for the filling og listanum*/
+.ingredients ol {
+  margin-top: 1rem;
+}
+
+.ingredients li p {
+  color: #9B9B9B;
+}
+
+/* setja grid á ingredients og methods */
+.ingredients-and-methods {
+  display: grid;
+  margin: 0 auto;
+  gap: var(--gutter);
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: auto;
+}
+
+.ingredients {
+  text-align: center;
+  grid-column: 1/span 7;
+}
+
+.grey {
+  color: #9B9B9B;
+}
+
+.lightbrown {
+  color: #E3CDB1;
+}
+
+.methods {
+  grid-column: 11/span 18;
+}
+
+.methods p {
+  margin: 2rem;
+}
+
+.cards {
+  gap: calc(var(--spacing) * 3);
+}
+
+.cards a {
+  color: var(--color-lightbrown);
+  justify-content: flex-end;
+}
+
+.recipes .cards {
+  display: flex;
+}
+
+.recipes h2 {
+  margin-bottom: var(--spacing);
+}
+
+.recipes {
+  z-index: 9999999;
+  gap: var(--spacing);
+  max-width: var(--max-width);
+}
+
+.card-efri-3 {
+  display: flex;
+  flex-direction: column;
+  width: 683px;
+}
+
+.card-efri-3 > .image {
+  order: -1;
+  height: 200px;
+}
+
+.card-efri-3 > .image img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 200px;
+}
+
+.card-efri-3 > .recipe-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing);
+}
+
+.card-efri-3 > .recipe-content > p {
+  flex: 1;
+}
+
+.card-nedri {
+  display: flex;
+  flex-direction: column;
+  width: 683px;
+}
+
+.recipe-content > .image {
+  order: -1;
+  height: 200px;
+}
+
+.recipe-content > .image img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 200px;
+}
+
+.card-nedri > .recipe-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing);
+}
+
+.card-nedri > .recipe-content > p {
+  flex: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.content-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 600px) and (max-width: 768px) {
+  .recipes .cards {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .card-efri-3 {
+    grid-column: 2/span 5;
+    height: 400px;
+  }
+  .card-efri-3 > .recipe-content {
+    height: 600px;
+  }
+  .recipe-content > .image img {
+    height: 300px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .recipes .cards-2 {
+    display: none;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .grid-3 > p {
+    grid-column: 2/span 5;
+    font-size: 1.2rem;
+  }
+  .grid-3 > h2 {
+    grid-column: 2/span 7;
+    font-size: 2.2rem;
+  }
+  .recipe-content p {
+    font-size: 1.2rem;
+  }
+  .recipe-content h3 {
+    font-size: 1.5rem;
+  }
+  .recipe-content a {
+    font-size: 1.2rem;
+  }
+}
+@media all and (max-width: 600px) {
+  .recipes .cards {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .card-efri-3 {
+    grid-column: 4/span 5;
+    height: 400px;
+  }
+  .card-efri-3 > .recipe-content {
+    height: 600px;
+  }
+  .recipe-content > .image img {
+    height: 300px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .recipes .cards {
+    display: none;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .grid-3 > p {
+    grid-column: 3/span 5;
+    font-size: 1.8rem;
+  }
+  .grid-3 > h2 {
+    grid-column: 3/span 7;
+    font-size: 2.5rem;
+  }
+  .recipe-content p {
+    font-size: 1.5rem;
+  }
+  .recipe-content h3 {
+    font-size: 2rem;
+  }
+  .recipe-content a {
+    font-size: 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

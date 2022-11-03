@@ -1,0 +1,211 @@
+/*
+* Hér er allt sem tengist recipes
+*/
+  .recipes {
+    z-index: 9999999;
+    gap: var(--spacing);
+    max-width: var(--max-width);
+  }
+  .recipes .cards-1 {
+    display: flex;
+    gap: calc(var(--spacing) * 3);
+  }
+  .recipes .cards-2 {
+    display: flex;
+    gap: calc(var(--spacing) * 3);
+  }
+  .recipes h2 {
+    margin-bottom: var(--spacing);
+  }
+  .card-efri {
+    display: flex;
+    flex-direction: column;
+    width: 683px;  
+  }
+  .card-efri > .image {
+    order: -1;
+    height: 200px;
+  }
+  .card-efri > .image img {
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 100%;
+    height: 200px;
+  }
+  .card-efri > .recipe-content {  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--spacing);
+  }
+  .card-efri > .recipe-content > p {
+    flex: 1;
+  }
+  .card-nedri {
+    display: flex;
+    flex-direction: column;
+    width: 683px;
+  }
+  .recipe-content > .image {
+    order: -1;
+    height: 200px;
+  }
+  .recipe-content > .image img {
+    object-fit: cover;
+    object-position: 50% 50%;
+  
+    width: 100%;
+    height: 200px;
+  }
+  .card-nedri > .recipe-content {  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--spacing);
+  }
+  .card-nedri > .recipe-content > p {
+    flex: 1;
+  }
+  .cards-1 a { 
+    color: var(--color-lightbrown);
+    justify-content: flex-end;
+  }
+  .cards-2 a { 
+    color: var(--color-lightbrown);
+    justify-content: flex-end;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .content-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  @mixin button-style {
+    background-color: transparent;
+    color: var(--color-lightbrown);
+    border-color: var(--color-lightbrown);
+    border-style: solid;
+    border-width: 1px;
+    padding: {
+      top: 1rem;
+      bottom: 1rem;
+      left: 4rem;
+      right: 4rem;
+    }
+  }
+  .seemore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      @include button-style;
+      margin: {
+        left: 2rem;
+        right: 2rem;
+      }
+    }
+    hr {
+      flex: 1;
+      height: 1px;
+      color: var(--color-lightbrown);
+      border-style: solid;
+    }
+  }
+
+ 
+  @media all and (min-width:600px) and (max-width:768px) {
+
+    .recipes .cards-1 {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .card-efri {
+      grid-column: 4 / span 5;
+      height: 400px;
+    }
+    .card-efri > .recipe-content {  
+      height: 600px;
+    }
+    .recipe-content > .image img {
+      height: 300px;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+    .recipes .cards-2 {
+      display: none;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .grid > p {
+      grid-column: 3 / span 5;
+      font-size: 1.2rem;
+    }
+    .grid > h2 {
+      grid-column: 3 / span 7;
+      font-size: 2.2rem;
+    }
+    .recipe-content p {
+      font-size: 1.2rem;
+    }
+    .recipe-content h3 {
+      font-size: 1.5rem;
+    }
+    .recipe-content a {
+      font-size: 1.2rem;
+    }
+  }
+  @media all and (max-width:600px) {
+    .recipes .cards-1 {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .card-efri {
+      grid-column: 4 / span 5;
+      height: 400px;
+    }
+    .card-efri > .recipe-content {  
+      height: 600px;
+    }
+    .recipe-content > .image img {
+      height: 300px;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+    .recipes .cards-2 {
+      display: none;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .grid > p {
+      grid-column: 3 / span 5;
+      font-size: 1.8rem;
+    }
+    .grid > h2 {
+      grid-column: 3 / span 7;
+      font-size: 2.5rem;
+    }
+    .recipe-content p {
+      font-size: 1.5rem;
+    }
+    .recipe-content h3 {
+      font-size: 2rem;
+    }
+    .recipe-content a {
+      font-size: 1.5rem;
+    }
+  }
+

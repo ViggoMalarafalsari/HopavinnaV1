@@ -1,0 +1,93 @@
+/*
+* Hér er allt sem tengist Book section svæðinu
+*/
+
+.container {
+    background-color: var(--color-book-section);
+    height: 75vh;
+    display: flex;
+    max-width: 100%;
+}
+.container .left-column {
+    display: flex;
+    align-items: center;
+}
+.book-content {
+    padding: 20%;
+}
+.container .right-column img {
+    position: absolute;
+    margin-top: 150px;
+    box-shadow: -5px -5px 10px gray;
+}
+.button {
+    background-color: transparent;
+    color: var(--color-lightbrown);
+    border-color: var(--color-lightbrown);
+    border-style: solid;
+    border-width: 1px;
+    padding: {
+      top: 1rem;
+      bottom: 1rem;
+      left: 4rem;
+      right: 4rem;
+    }
+}
+@media all and (min-width:600px) and (max-width:768px) {
+    .container {
+        height: 95vh;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(2, 50vh);
+    }
+    .container .left-column {
+        grid-column: 2 / span 10;
+        grid-row: 1;
+    }
+    .book-content {
+        text-align: center;
+        padding: 15%;
+    }
+    .book-content p {
+        font-size: 1.2em;
+    }
+    .container .right-column {
+        grid-column: 5 / span 8;
+        grid-row: 2;
+        margin-bottom: 100px;
+    }
+    .container .right-column img {
+        margin-top: 0;
+        height: 60%;
+    }
+}
+@media all and (max-width:600px) {
+    .container {
+        height: 95vh;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(2, 50vh);
+    }
+    .container .left-column {
+        grid-column: 2 / span 10;
+        grid-row: 1;
+    }
+    .book-content {
+        text-align: center;
+        padding: 15%;
+    }
+    .book-content p {
+        font-size: 1.5em;
+    }
+    .container .right-column {
+        grid-column: 5 / span 8;
+        grid-row: 2;
+        margin-bottom: 100px;
+    }
+    .container .right-column img {
+        margin-top: 20px;
+        height: 60%;
+    }
+}
+
+

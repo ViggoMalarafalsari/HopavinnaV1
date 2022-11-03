@@ -1,0 +1,23 @@
+{
+  "name": "vefforritunh1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "browser-sync": "browser-sync start --server --files index.html styles/*.css",
+    "sass": "sass --watch stylesheets/scss/_main.scss stylesheets/styles.css",
+    "lint-css": "stylelint styles.css",
+    "lint-scss": "stylelint styles.scss --syntax scss",
+    "dev": "concurrently npm:sass-watch npm:browser-sync",
+    "browser-sync:latest-recipes": "browser-sync start --server --index sidur/latest-recipes.html --files sidur/latest-recipes.html styles.css",
+    "latrec": "concurrently npm:sass-watch npm:browser-sync:latest-recipes"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "concurrently": "^7.4.0",
+    "sass": "^1.55.0",
+    "stylelint": "^14.14.0"
+  }
+}
